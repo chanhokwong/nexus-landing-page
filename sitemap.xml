@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <!-- 重要: 請在部署後將 [你的最終域名] 替換為您的真實域名 -->
-    <loc>https://[你的最終域名]/</loc>
-    <lastmod>2024-05-23</lastmod> <!-- 您可以更新為網站最後修改的日期 -->
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+
+    <!-- 這是你網站的主頁 -->
+    <url>
+        <loc>https://www.nexus-ai-edu.app/</loc>
+        <lastmod>2025-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
 </urlset>

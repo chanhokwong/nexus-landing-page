@@ -4,4 +4,4 @@ Allow: /
 
 # 指明站點地圖的位置
 # 重要: 請在部署後將 [你的最終域名] 替換為您的真實域名
-Sitemap: https://[你的最終域名]/sitemap.xml
+Sitemap: https://www.nexus-ai-edu.app/sitemap.xml
