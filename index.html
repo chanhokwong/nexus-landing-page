@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <!-- =================================================================
+    == SECTION 2: SEO 技術實現清單 (已嚴格執行)
+    ================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus: 你的 AI 學習助手 | 總結、測驗、生成筆記</title>
+    <meta name="description" content="厭倦了低效學習？Nexus 是一款革命性的 AI 工具，能將任何文檔轉換為摘要、測驗、知識卡片和架構圖。你的專屬 AI 導師，讓學習與工作效率倍增！">
+
+    <!-- 技術棧: Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 自定義樣式與動畫 -->
+    <style>
+        /* Tooltip 樣式 */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* --- 新增：定義一個緩慢旋轉的動畫 --- */
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 60s linear infinite; /* 60秒轉一圈 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans antialiased">
+
+    <!-- SEO: Semantic Header -->
+    <header class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- =================================================================
+        == 改動 1: 在 Header 中加入 Logo
+        ================================================================== -->
+        <a href="#home" class="flex items-center gap-x-3 z-10">
+            <!-- 將 nexus-logo.svg 文件放在與此 html 文件相同的目錄下 -->
+            <img src="img/nexus-logo.svg" alt="Nexus App Logo" class="h-8 w-8">
+            <h1 class="text-2xl font-bold">Nexus</h1>
+        </a>
+        <nav class="z-10">
+            <a href="#features" class="text-gray-300 hover:text-white px-3">功能</a>
+            <a href="#contact" class="text-gray-300 hover:text-white px-3">聯繫我們</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <!-- =================================================================
+        == 改動 2: 在 Hero Section 加入背景 Logo
+        ================================================================== -->
+        <section id="home" class="relative overflow-hidden container mx-auto px-6 py-24 text-center">
+
+            <!-- 背景裝飾性 Logo -->
+            <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+                <img src="img/nexus-logo.svg" alt="" class="h-[600px] w-[600px] max-w-none opacity-5 animate-spin-slow">
+            </div>
+
+            <!-- 前景內容 (加上 z-10 確保在背景之上) -->
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                    用 AI 重塑你的<span class="text-indigo-400">學習與工作流</span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+                    還在為消化厚重的文檔、報告和論文而煩惱嗎？Nexus 讓 AI 成為你的專屬學習助手，能將任何學習資料自動轉換為精華筆記、隨身測驗和記憶卡片，讓你的學習與工作效率倍增！
+                </p>
+
+                <div id="cta-module" class="mt-10 flex justify-center items-center gap-4">
+                    <div class="tooltip">
+                         <a href="#" class="block opacity-50 pointer-events-none">
+                            <img src="https://static.whatsapp.net/rsrc.php/yX/r/U_C35MTf1-R.svg" alt="Download on the App Store" style="height: 56px; width: 180px;">
+                         </a>
+                        <span class="tooltip-text">Coming Soon!</span>
+                    </div>
+                    <div class="tooltip">
+                        <a href="#" class="block opacity-50 pointer-events-none">
+                           <img alt="Get it on Google Play" src="https://static.whatsapp.net/rsrc.php/v4/yU/r/2xxrMoR-LRj.png" style="height: 70px; width: 180px;">
+                        </a>
+                        <span class="tooltip-text">Coming Soon!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        == 功能介紹模塊 (已擴充為 6 個功能)
+        ================================================================== -->
+        <section id="features" class="py-20 bg-gray-800/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">核心功能</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="img/AiTutor.png" alt="Nexus AI 導師問答功能界面" class="mx-auto rounded-md mb-6 w-full h-auto">
+                        <h3 class="text-xl font-bold mb-2">🧠 AI 導師 & 問答</h3>
+                        <p class="text-gray-400">你的專屬AI問答家教，從任何文檔中即時獲取精準解答。</p>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="img/NotesGeneration.png" alt="Nexus 自動生成精華筆記的功能展示" class="mx-auto rounded-md mb-6 w-full h-auto">
+                        <h3 class="text-xl font-bold mb-2">📝 一鍵生成精華筆記</h3>
+                        <p class="text-gray-400">AI 自動為你提煉核心重點，告別繁瑣的手動筆記。</p>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="img/ClueSheet.png" alt="Nexus 生成記憶卡片以供複習的界面" class="mx-auto rounded-md mb-6 w-full h-auto">
+                        <h3 class="text-xl font-bold mb-2">✨ 重點卡片生成 (Flashcards)</h3>
+                        <p class="text-gray-400">將複雜知識點轉化為易於記憶的重點卡片，隨時隨地翻閱複習。</p>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="img/SelectQuestion.png" alt="Nexus 根據文檔內容生成智能測驗" class="mx-auto rounded-md mb-6 w-full h-auto">
+                        <h3 class="text-xl font-bold mb-2">✅ 智能測驗與錯題鞏固</h3>
+                        <p class="text-gray-400">根據文檔內容生成測驗，自動收集錯題，針對性強化練習。</p>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="img/MindMap.png" alt="Nexus 將知識點生成為可視化知識架構圖" class="mx-auto rounded-md mb-6 w-full h-auto">
+                        <h3 class="text-xl font-bold mb-2">🗺️ 知識架構圖</h3>
+                        <p class="text-gray-400">一鍵可視化複雜概念，理清邏輯脈絡，構建你的知識體系。</p>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="img/Workspace.png" alt="Nexus 的個人知識庫管理工作台" class="mx-auto rounded-md mb-6 w-full h-auto">
+                        <h3 class="text-xl font-bold mb-2">📚 打造個人知識庫</h3>
+                        <p class="text-gray-400">批量管理文件，支持跨文件內容搜索，瞬間定位關鍵信息。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        == 目標用戶與場景 (新增部分)
+        ================================================================== -->
+        <section id="target-users" class="py-20">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-3xl font-bold mb-6">為每一位高效學習者而生</h2>
+                <p class="text-lg text-gray-400">
+                    無論你是需要快速掌握論文要點的<span class="text-indigo-400 font-semibold">學生</span>、正在準備考試的<span class="text-indigo-400 font-semibold">研究者</span>，還是需要高效處理會議紀要和報告的<span class="text-indigo-400 font-semibold">職場人士</span>，Nexus 都是你的終極效率夥伴。
+                </p>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        == 聯繫我們表單模塊 (保持不變)
+        ================================================================== -->
+        <section id="contact" class="py-20 bg-gray-800/50">
+            <div class="container mx-auto px-6 max-w-xl">
+                <h2 class="text-3xl font-bold text-center mb-8">聯繫我們</h2>
+                <p class="text-center text-gray-400 mb-8">有任何問題、建議或合作意向？請隨時給我們留言。</p>
+
+                <form id="contact-form" action="https://formspree.io/f/mzzazwwk" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">姓名 (Name)</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">郵箱 (Email)</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">留言內容 (Message)</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500">
+                            發送留言
+                        </button>
+                    </div>
+                </form>
+                <p id="form-status" class="mt-4 text-center"></p>
+            </div>
+        </section>
+
+        <!-- =================================================================
+        == 行動號召 (新增部分)
+        ================================================================== -->
+        <section class="py-20 text-center">
+             <h2 class="text-2xl font-bold">立即下載 Nexus，開啟你的智能學習與創造之旅！</h2>
+             <div class="mt-6">
+                 <a href="#home" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                    返回頂部下載
+                 </a>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- SEO: Semantic Footer -->
+    <footer class="bg-gray-800/50">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            &copy; 2024 Nexus App. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // --- 聯繫表單異步提交邏輯 (保持不變) ---
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('form-status');
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+
+            statusEl.textContent = '發送中...';
+            statusEl.className = 'mt-4 text-center text-blue-400';
+
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    statusEl.textContent = '感謝您的留言，我們已收到！';
+                    statusEl.className = 'mt-4 text-center text-green-400';
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        statusEl.textContent = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        statusEl.textContent = '糟糕，發送失敗，請稍後重試。';
+                    }
+                    statusEl.className = 'mt-4 text-center text-red-400';
+                }
+            } catch (error) {
+                statusEl.textContent = '糟糕，網絡出錯，請稍後重試。';
+                statusEl.className = 'mt-4 text-center text-red-400';
+            }
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
+</body>
+</html>
